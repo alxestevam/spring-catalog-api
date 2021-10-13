@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:33006/catalog
+    username: root
+    password: root
+
+server:
+  servlet:
+    context-path: /api
