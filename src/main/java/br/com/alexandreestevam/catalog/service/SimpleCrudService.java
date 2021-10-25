@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 
 @AllArgsConstructor
 public abstract class SimpleCrudService<T, K, ID> implements CrudService<K, ID> {
-    private CrudRepository<T, ID> repository;
+    protected CrudRepository<T, ID> repository;
 
-    private CrudMapper<T, K> mapper;
+    protected CrudMapper<T, K> mapper;
 
     public Page<K> findAll(Integer pageNo, Integer pageSize, String sortBy) {
         Page<T> entities = repository.findAll(PageRequest.of(pageNo, pageSize, Sort.by(sortBy)));
