@@ -11,7 +11,7 @@ import javax.validation.Valid;
 
 @AllArgsConstructor
 public abstract class SimpleCrudController<K, ID> implements CrudController<K, ID> {
-    private final CrudService<K, ID> crudService;
+    protected final CrudService<K, ID> crudService;
 
     @GetMapping
     public Page<K> index(
